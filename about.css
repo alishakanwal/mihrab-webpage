@@ -1,0 +1,706 @@
+/* 1. GLOBAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+:root {
+    --cream: #F7F8F1;
+    --olive: #2E4A2F;
+    --olive-text: #4F6F52;
+    --sage: #6B8F5B;
+    --card: #EBE6D9;
+    --accent: #C9D3B8;
+    --white: #FFFFFF;
+    --muted: #687A67;
+    --border: rgba(79, 111, 82, 0.22);
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--cream);
+    color: var(--olive);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* 2. HEADER AND NAVIGATION */
+
+.navbar {
+    width: 100%;
+    min-height: 85px;
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+
+    background-color: var(--cream);
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--olive);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    background-color: var(--sage);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--sage);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* 3. ABOUT HERO SECTION */
+
+.about-hero {
+    min-height: 550px;
+    padding: 90px 8%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 600px;
+    padding: 90px 8%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247, 248, 241, 0.97) 0%,
+            rgba(247, 248, 241, 0.86) 48%,
+            rgba(247, 248, 241, 0.25) 100%
+        ),
+        url("background2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--border);
+}
+
+.about-hero-content {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+
+    animation: fadeUp 1s ease;
+}
+
+.about-hero-content h1 {
+    margin-bottom: 12px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 7vw, 78px);
+    font-weight: 500;
+    letter-spacing: 8px;
+    line-height: 1.2;
+}
+
+.about-hero-content h2 {
+    margin-bottom: 25px;
+
+    color: var(--sage);
+    font-family: Georgia, serif;
+    font-size: clamp(23px, 3vw, 34px);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.about-hero-content p {
+    max-width: 760px;
+    margin: 0 auto 22px;
+
+    color: var(--olive-text);
+    font-size: 15px;
+    line-height: 2;
+}
+
+
+/* 4. COMMON BUTTON */
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 14px 28px;
+
+    background-color: var(--sage);
+    color: var(--white);
+
+    border: 1px solid var(--sage);
+    border-radius: 0;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--olive);
+    border-color: var(--olive);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+
+/* 5. WHO WE ARE SECTION */
+
+.about-intro {
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 8%;
+
+    text-align: center;
+}
+
+.about-intro h2 {
+    margin: 12px 0 25px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.about-intro p {
+    max-width: 900px;
+    margin: 0 auto 18px;
+
+    color: var(--olive-text);
+    font-size: 15px;
+    line-height: 2.1;
+}
+
+
+/* 6. OUR MISSION SECTION */
+
+.our-mission {
+    padding: 85px 8%;
+
+    background-color: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
+}
+
+.our-mission h2 {
+    margin: 12px 0 25px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.our-mission p {
+    max-width: 900px;
+    margin: 0 auto 18px;
+
+    color: var(--olive-text);
+    font-size: 15px;
+    line-height: 2.1;
+}
+
+
+/* 7. OUR VISION SECTION */
+
+.our-vision {
+    max-width: 1150px;
+    margin: auto;
+    padding: 95px 8%;
+
+    text-align: center;
+}
+
+.our-vision h2 {
+    margin: 12px 0 25px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.our-vision p {
+    max-width: 900px;
+    margin: 0 auto 18px;
+
+    color: var(--olive-text);
+    font-size: 15px;
+    line-height: 2.1;
+}
+
+
+/* 8. WHAT WE EXPLORE SECTION */
+
+.what-we-explore {
+    padding: 85px 7%;
+
+    background-color: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
+}
+
+.what-we-explore > h2 {
+    margin: 12px 0 25px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.what-we-explore > p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+
+    color: var(--olive-text);
+    font-size: 15px;
+    line-height: 2;
+}
+
+
+/* 9. EXPLORE CARDS GRID */
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.explore-card {
+    min-width: 0;
+    padding: 38px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.explore-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--sage);
+
+    box-shadow:
+        0 12px 25px rgba(46, 74, 47, 0.12);
+}
+
+.explore-card h3 {
+    margin-bottom: 15px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.explore-card p {
+    max-width: 430px;
+    margin-bottom: 18px;
+
+    color: var(--olive-text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.explore-card .btn {
+    margin-top: auto;
+}
+
+
+/* 10. HERITAGE IMPORTANCE SECTION */
+
+.heritage-importance {
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 8%;
+
+    text-align: center;
+}
+
+.heritage-importance h2 {
+    margin: 12px 0 25px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.heritage-importance p {
+    max-width: 900px;
+    margin: 0 auto 18px;
+
+    color: var(--olive-text);
+    font-size: 15px;
+    line-height: 2.1;
+}
+
+
+/* 11. CLOSING SECTION */
+
+.about-ending {
+    padding: 85px 8%;
+
+    background-color: var(--card);
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+}
+
+.about-ending h2 {
+    max-width: 900px;
+    margin: 0 auto 25px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 4vw, 43px);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.about-ending p {
+    max-width: 800px;
+    margin: 0 auto 18px;
+
+    color: var(--olive-text);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.about-ending .btn {
+    margin-top: 18px;
+}
+
+
+/* 12. FOOTER */
+
+footer {
+    padding: 55px 7% 25px;
+
+    background-color: var(--olive);
+    color: var(--cream);
+    text-align: center;
+}
+
+footer h2 {
+    margin-bottom: 12px;
+
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-size: 30px;
+    letter-spacing: 6px;
+}
+
+footer p {
+    color: var(--cream);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: var(--cream);
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+
+    color: var(--accent);
+    border-top: 1px solid rgba(247, 248, 241, 0.2);
+    font-size: 11px;
+}
+
+
+/* 13. ANIMATION */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 14. TABLET RESPONSIVE DESIGN */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 18px 4%;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .about-hero {
+        min-height: 500px;
+        padding: 75px 6%;
+    }
+
+    .about-intro,
+    .our-vision,
+    .heritage-importance {
+        padding: 75px 6%;
+    }
+
+    .our-mission,
+    .what-we-explore,
+    .about-ending {
+        padding: 75px 5%;
+    }
+
+    .explore-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+
+/* 15. MOBILE RESPONSIVE DESIGN */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 18px 15px;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .nav-links {
+        gap: 12px 16px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .about-hero {
+        min-height: 470px;
+        padding: 65px 22px;
+        background-position: center;
+    }
+
+    .about-hero-content h1 {
+        font-size: 42px;
+        letter-spacing: 5px;
+    }
+
+    .about-hero-content h2 {
+        font-size: 24px;
+    }
+
+    .about-hero-content p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .about-intro,
+    .our-vision,
+    .heritage-importance {
+        padding: 65px 23px;
+    }
+
+    .our-mission,
+    .what-we-explore,
+    .about-ending {
+        padding: 65px 20px;
+    }
+
+    .about-intro h2,
+    .our-mission h2,
+    .our-vision h2,
+    .what-we-explore > h2,
+    .heritage-importance h2 {
+        font-size: 32px;
+    }
+
+    .about-intro p,
+    .our-mission p,
+    .our-vision p,
+    .heritage-importance p,
+    .about-ending p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .explore-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .explore-card {
+        padding: 30px 22px;
+    }
+
+    .explore-card h3 {
+        font-size: 23px;
+    }
+
+    .about-ending h2 {
+        font-size: 30px;
+    }
+
+    footer {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
+
+
+/* 16. EXTRA SMALL SCREENS */
+
+@media (max-width: 380px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 34px;
+        letter-spacing: 3px;
+    }
+
+    .about-hero-content h2 {
+        font-size: 21px;
+    }
+
+    .about-intro h2,
+    .our-mission h2,
+    .our-vision h2,
+    .what-we-explore > h2,
+    .heritage-importance h2 {
+        font-size: 28px;
+    }
+
+    .explore-card h3 {
+        font-size: 21px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 11px;
+    }
+}

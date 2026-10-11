@@ -1,0 +1,609 @@
+/* ---------- BASIC SETTINGS ---------- */
+/* =====================================
+   MIHRAB - HOME PAGE
+   Matching Heritage, Mosques & Architecture
+===================================== */
+
+/* 1. RESET AND BASIC STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+:root {
+    --cream: #F7F8F1;
+    --olive: #2E4A2F;
+    --olive-text: #4F6F52;
+    --sage: #6B8F5B;
+    --card: #EBE6D9;
+    --accent: #C9D3B8;
+    --white: #FFFFFF;
+    --muted: #687A67;
+    --border: rgba(79, 111, 82, 0.22);
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #F7F8F1;
+    color: var(--olive);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* 2. HEADER AND NAVIGATION */
+
+.navbar {
+    width: 100%;
+    min-height: 85px;
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+
+    background-color:  var(--cream);
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo {
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    flex-shrink: 0;
+    margin-right: auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--olive);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    background-color: var(--sage);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--sage);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* 3. HERO SECTION */
+
+.hero {
+    min-height: 600px;
+    padding: 90px 8%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   background:
+        linear-gradient(
+            90deg,
+            rgba(247, 248, 241, 0.97) 0%,
+            rgba(247, 248, 241, 0.86) 48%,
+            rgba(247, 248, 241, 0.25) 100%
+        ),
+        url("background2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--border);
+}
+.hero-content {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    animation: fadeUp 1s ease;
+     font-weight: bold;
+}
+
+.hero-content h1 {
+    margin-bottom: 8px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 7vw, 82px);
+    font-weight: 500;
+    letter-spacing: 10px;
+    line-height: 1.2;
+}
+
+.hero-content h2 {
+    margin-bottom: 25px;
+
+    color: var(--sage);
+    font-family: Georgia, serif;
+    font-size: clamp(23px, 3vw, 34px);
+    font-weight: 500;
+}
+
+.hero-content p {
+    max-width: 760px;
+    margin: 0 auto 22px;
+
+    color: var(--olive-text);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 14px 28px;
+
+    background-color: var(--sage);
+    color: var(--white);
+
+    border: 1px solid var(--sage);
+    border-radius: 0;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--olive);
+    border-color: var(--olive);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+
+/* 4. INTRODUCTION SECTION */
+
+.intro {
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.intro h2,
+.featured h2,
+.architecture-preview h2 {
+    margin: 12px 0 25px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.intro p {
+    max-width: 900px;
+    margin: 0 auto 15px;
+
+    color: var(--olive-text);
+    font-size: 15px;
+    line-height: 2.1;
+}
+
+
+/* 5. FEATURED HERITAGE SECTION */
+
+.featured {
+    padding: 80px 7%;
+    text-align: center;
+
+    background-color: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.featured > p {
+    max-width: 750px;
+    margin: 0 auto 35px;
+
+    color: var(--olive-text);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    max-width: 1250px;
+    margin: 40px auto 0;
+}
+
+.heritage-card {
+    min-width: 0;
+    padding-bottom: 25px;
+    overflow: hidden;
+
+    background-color: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+
+    text-align: left;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.heritage-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--sage);
+    box-shadow: 0 12px 25px rgba(46, 74, 47, 0.12);
+}
+
+.heritage-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.6s ease;
+}
+
+.heritage-card:hover img {
+    transform: scale(1.04);
+}
+
+.heritage-card h3 {
+    margin: 22px 20px 10px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.heritage-card p {
+    padding: 0 20px;
+
+    color: var(--olive-text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.heritage-card .btn {
+    margin: 20px;
+}
+
+
+/* 6. ARCHITECTURE PREVIEW */
+
+.architecture-preview {
+    padding: 100px 7%;
+    text-align: center;
+}
+
+.architecture-preview > p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+
+    color: var(--olive-text);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+
+    max-width: 1250px;
+    margin: 0 auto 40px;
+}
+
+.architecture-box {
+    min-width: 0;
+    padding: 32px 24px;
+
+    background-color: var(--card);
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.architecture-box:hover {
+    transform: translateY(-6px);
+    background-color: var(--accent);
+    border-color: var(--sage);
+}
+
+.architecture-box h3 {
+    margin-bottom: 14px;
+
+    color: var(--olive);
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.architecture-box p {
+    color: var(--olive-text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.architecture-preview > .btn {
+    margin-top: 15px;
+}
+
+
+/* 7. FOOTER */
+
+footer {
+    padding: 55px 7% 25px;
+
+    background-color: var(--olive);
+    color: var(--cream);
+    text-align: center;
+}
+
+footer h2 {
+    margin-bottom: 12px;
+
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-size: 30px;
+    letter-spacing: 6px;
+}
+
+footer p {
+    color: var(--cream);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: var(--cream);
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+
+    color: var(--accent);
+    border-top: 1px solid rgba(247, 248, 241, 0.2);
+    font-size: 11px;
+}
+
+
+/* 8. ANIMATION */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 9. TABLET RESPONSIVE DESIGN */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 18px 4%;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .heritage-grid,
+    .architecture-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .intro {
+        padding: 75px 6%;
+    }
+
+    .featured,
+    .architecture-preview {
+        padding: 75px 5%;
+    }
+}
+
+
+/* 10. MOBILE RESPONSIVE DESIGN */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 18px 15px;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .nav-links {
+        gap: 12px 16px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 65px 22px;
+        background-position: center;
+    }
+
+    .hero-content h1 {
+        font-size: 43px;
+        letter-spacing: 6px;
+    }
+
+    .hero-content h2 {
+        font-size: 25px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .intro {
+        padding: 65px 23px;
+    }
+
+    .intro h2,
+    .featured h2,
+    .architecture-preview h2 {
+        font-size: 32px;
+    }
+
+    .intro p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .featured {
+        padding: 65px 18px;
+    }
+
+    .heritage-grid,
+    .architecture-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .heritage-card img {
+        height: 250px;
+    }
+
+    .heritage-card h3 {
+        font-size: 21px;
+    }
+
+    .architecture-preview {
+        padding: 65px 18px;
+    }
+
+    .architecture-box {
+        padding: 26px 20px;
+    }
+
+    footer {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
+
+
+/* 11. EXTRA SMALL SCREENS */
+
+@media (max-width: 380px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+    .hero-content h2 {
+        font-size: 22px;
+    }
+
+    .heritage-card h3,
+    .architecture-box h3 {
+        font-size: 19px;
+    }
+}
